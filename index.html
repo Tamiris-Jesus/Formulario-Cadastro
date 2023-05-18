@@ -19,7 +19,7 @@
 </head>
 <body>
   <div class="container center-align">
-    <h1 id="text">Cadastro</h1>
+    <h1 id="text">CADASTRO</h1>
     <form class="width-form">
         <div class="row">
             <div class="input-field">
@@ -27,7 +27,7 @@
                 <label for="nome">Nome</label>
             </div>
             <div class="input-field">
-                <input type="date" id="data_nascimento" required>
+                <input type="date" id="data_nascimento" min="1920-01-01" max="2023-05-18" required>
                 <label for="data_nascimento">Data de Nascimento</label>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="input-field">
                 <input type="text" id="cep" required>
                 <label for="cep">CEP</label>
-                <button class="btn-floating btn-small" onclick="consultarEndereco()">
+                <button class="btn-floating btn-small" id="consultar-btn">
                     <img src="./img/busca.png" alt="" width="20px">
                 </button>
             </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="row">
             <div class="input-field">
-                <input type="text" id="complemento" required>
+                <input type="text" id="complemento">
                 <label for="complemento">Complemento</label>
             </div>
             <div class="input-field">

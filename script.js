@@ -1,3 +1,6 @@
+const consultarBtn = document.querySelector('#consultar-btn');
+
+
 function calcularIdade() {
   var dataNascimento = document.getElementById('data_nascimento').value;
   var partesData = dataNascimento.split("-");
@@ -15,6 +18,8 @@ function calcularIdade() {
 document.getElementById('data_nascimento').addEventListener('change', calcularIdade);
 M.AutoInit();
 
+
+
 function consultarEndereco() {
   let cep = document.querySelector('#cep').value;
 
@@ -31,6 +36,11 @@ function consultarEndereco() {
         .then(atualizarEndereco);
     });
 }
+
+consultarBtn.addEventListener('click', function(event) {
+  event.preventDefault(); // Impede o envio automático do formulário
+  consultarEndereco();
+});
 
 function atualizarEndereco(dados) {
   if (dados.erro) {
